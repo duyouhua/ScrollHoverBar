@@ -32,7 +32,6 @@ public class MainActivity extends Activity {
 	protected int firstScrollY;
 	private ImageView mImg;
 	protected float mImgY;
-	private RelativeLayout mRootLayout;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,16 +39,6 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		mScrollView = (ObservableScrollView) findViewById(R.id.scrollView1);
 		mImg = (ImageView) findViewById(R.id.img);
-		mRootLayout = (RelativeLayout) findViewById(R.id.rootLayout);
-		findViewById(R.id.button1).setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				
-				
-			}
-		});
 		mBar = (LinearLayout) findViewById(R.id.bar);
 		mBar2 = (LinearLayout) findViewById(R.id.bar2);
 		mBottomBar = (RelativeLayout) findViewById(R.id.bottomBar);
@@ -95,11 +84,11 @@ public class MainActivity extends Activity {
 	}
 	
 	private void showBottomBar(int offset) {
-		int mBottomBarTop = mBottomBar.getTop();//»ñÈ¡µ×À¸¶¥²¿¸ß¶È£¬ÓÉÓÚÊÇ²¼¾Ö¸ß¶È£¬ËùÒÔSetYºóÒÀÈ»Öµ²»±ä
+		int mBottomBarTop = mBottomBar.getTop();//èŽ·å–åº•æ é¡¶éƒ¨é«˜åº¦ï¼Œç”±äºŽæ˜¯å¸ƒå±€é«˜åº¦ï¼Œæ‰€ä»¥SetYåŽä¾ç„¶å€¼ä¸å˜
 		if ((mBottomBar.getY()) >= mBottomBarTop
 				&& (mBottomBar.getY()) <= mBottomBarTop
 						+ mBottomBar.getHeight()) {
-			//ÔÚÆÁÄ»µ×²¿ÉÏÏÂÇø¼äÒÆ¶¯
+			//åœ¨å±å¹•åº•éƒ¨ä¸Šä¸‹åŒºé—´ç§»åŠ¨
 			mBottomBar.setY(mBottomBarY + offset*0.5f);
 		}
 		if ((mBottomBar.getY()) < mBottomBarTop) {
@@ -115,12 +104,12 @@ public class MainActivity extends Activity {
 	
 	private void showTopBar(ObservableScrollView scrollView) {
 		if (mScrollViewLocation[1] == 0) {
-			// µÚÒ»´Î»ñÈ¡scrollviewÔÚÆÁÄ»µÄ¸ß¶È
+			// ç¬¬ä¸€æ¬¡èŽ·å–scrollviewåœ¨å±å¹•çš„é«˜åº¦
 			scrollView.getLocationInWindow(mScrollViewLocation);
 		}
 		mBar.getLocationInWindow(mBarLocation);
 		if (mBarLocation[1] <= mScrollViewLocation[1]) {
-			// Èç¹ûÀ¸1³¬³öscrollview¶¥²¿ÔòÒþ²ØµÄÀ¸2ÏÔÊ¾³öÀ´£¬·´Ö®À¸2Òþ²Ø¡¢À¸1ÏÔÊ¾
+			// å¦‚æžœæ 1è¶…å‡ºscrollviewé¡¶éƒ¨åˆ™éšè—çš„æ 2æ˜¾ç¤ºå‡ºæ¥ï¼Œåä¹‹æ 2éšè—ã€æ 1æ˜¾ç¤º
 			mBar.setVisibility(View.INVISIBLE);
 			mBar2.setVisibility(View.VISIBLE);
 		} else {

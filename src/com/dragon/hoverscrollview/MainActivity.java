@@ -47,35 +47,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				
-				getWindow().getDecorView().setBackgroundColor(0xff000000);
-				ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 0.9f, 1.0f,
-						0.9f, Animation.RELATIVE_TO_SELF, 0.5f,
-						Animation.RELATIVE_TO_SELF, 0.5f);
-				scaleAnimation.setDuration(100);
-				scaleAnimation.setInterpolator(new LinearInterpolator());
-				scaleAnimation.setAnimationListener(new AnimationListener() {
-					
-					
-					@Override
-					public void onAnimationEnd(Animation animation) {
-						// TODO Auto-generated method stub
-//						mRootLayout.setScaleX(0.9f);
-//						mRootLayout.setScaleY(0.9f);
-					}
-
-					@Override
-					public void onAnimationStart(Animation animation) {
-						// TODO Auto-generated method stub
-						
-					}
-
-					@Override
-					public void onAnimationRepeat(Animation animation) {
-						// TODO Auto-generated method stub
-						
-					}
-				});
-				mRootLayout.startAnimation(scaleAnimation);
+				
 			}
 		});
 		mBar = (LinearLayout) findViewById(R.id.bar);

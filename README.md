@@ -6,6 +6,7 @@
 
 ![gif](https://raw.githubusercontent.com/X-Dragon/ScrollHoverBar/master/gif/scrollhoverbar.gif)
 
+## License
 
 The MIT License (MIT)
 
